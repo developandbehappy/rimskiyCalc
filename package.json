@@ -1,0 +1,25 @@
+{
+  "name": "DownoladTimeOut",
+  "version": "0.0.1",
+  "description": "DownoladTimeOut",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.9.10",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-jscs": "^3.0.1"
+  },
+  "scripts": {
+    "test": "./node_modules/gulp/bin/gulp.js test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zidein07/DownoladTimeOut.git"
+  },
+  "author": "zidein07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zidein07/DownoladTimeOut/issues"
+  },
+  "homepage": "https://github.com/zidein07/DownoladTimeOut#readme"
+}
