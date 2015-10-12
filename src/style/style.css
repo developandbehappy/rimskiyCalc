@@ -1,0 +1,49 @@
+#time {
+	background: #444;
+}
+
+body {
+	background: #eef;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#inputData {
+	width: 400px;
+	height: 60px;
+	margin: auto;
+	text-align: center;
+	position: absolute;
+	top:0;bottom:40px;left: 0;right: 0;
+}
+
+#inputData > *:focus {
+	outline: none;
+}
+
+#dataLink {
+	height: 40px;
+	width: 250px;
+	font-size: 20px;
+	color: #666;
+	text-align: center;
+}
+
+#addDown, #setTime {
+	position: relative;
+	right: 5px;
+	top: -2px;
+	height: 44px;
+	width: 130px
+}
+
+#fotter {
+	width: 100%;
+	height: 50px;
+	background: #333;
+	position: absolute;
+	bottom: 0;
+}
