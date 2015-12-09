@@ -16,6 +16,9 @@ var view = Backbone.View.extend({
 			this.inputData().attr('type', 'time');
 			setTimeBtn.attr('value', 'Добавить');
 			setTimeBtn.attr('id', 'setTime');
+			this.collection.add({
+				src: this.valueInput()
+			});
 		} else {
 			console.log('false')
 		}

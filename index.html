@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="src/style/style.css">
-	<title>DowloadTimeOut</title>
+	<meta charset="UTF-8">
+	<title>Bootsrap test</title>
+	<link rel="stylesheet" href="./src/style/stile.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-<div id='inputData'>
-	<!-- <input type='time' id='time'> -->
-	<input type='text' placeholder='Вставьте адрес загрузки' id='dataLink'>
-	<input type='button' value='Установить таймер' id='addDown'>
+<div class="container col-md-offset-3 col-md-5 col-sm-6 col-sm-offset-3 col-xs-12" >
+	<h1 class='text-center'>TodoList Backbone</h1>
+<form>
+	<div class="col-centered">
+		<input type="text" class='col-md-9 col-sm-9 col-xs-8'>
+		<button class='col-md-3 col-sm-3 col-xs-4'>Добавить</button>
+	</div>
+</form>
+    <div>
+        <ul>
+            <li><a href="#/all">Все</a></li>
+            <li><a href="#/active">Активные</a></li>
+            <li><a href="#/done">Завершенные</a></li>
+        </ul>
+    </div>
 </div>
-<div id='fotter'></div>
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/underscore/underscore.js"></script>
-<script src="vendor/backbone/backbone.js"></script>
-<script type="text/javascript" src="src/script/storage.js"></script>
-<script type="text/javascript" src="src/script/model/model.js"></script>
-<script type="text/javascript" src="src/script/collection/collection.js"></script>
-<script type="text/javascript" src="src/script/view/view.js"></script>
-<script type="text/javascript" src="src/script/router/router.js"></script>
-<script type="text/javascript" src="src/script/app.js"></script>
 </body>
 </html>
