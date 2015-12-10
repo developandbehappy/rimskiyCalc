@@ -15,16 +15,25 @@
 	</select>
 	<input type="text" placeholder="Вставьте число римскими символами" id="dataSecond">
 	<br>
-	<button id="count">Считать!</button>
+	<button id="button">Считать!</button>
 	<br>
 	<pre id="result"></pre>
 </div>
 <script>
 	var M = 1000, D = 500, C = 100, L = 50, X = 10, V = 5, I = 1;
-	var button = document.getElementById('count');
+	var button = document.getElementById('button');
 	var result = document.getElementById('result');
 	var dataFirst = document.getElementById('dataFirst');
 	var dataSecond = document.getElementById('dataSecond');
+
+	button.addEventListener('click', function () {
+		if (dataFirst.value !== '' && dataSecond.value !== '') {
+			console.log('true', true);
+		} else {
+			result.innerHTML = 'Оба поля должны быть заполнены'
+		}
+	});
+
 	function countPlus(val) {
 		var result = '';
 		switch (val) {
