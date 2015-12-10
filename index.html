@@ -8,33 +8,55 @@
 </head>
 <body>
 <div class="container col-sm-6 col-sm-offset-3 col-xs-12 text-center" id="mainBlock">
-	<h1>TodoList</h1>
-	<div class="input-group">
-		<input type="text" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Добавить</button>
-      </span>
-	</div>
+	<h1>Решение</h1>
+	<input type="text" placeholder="Вставьте число римскими символами" id="dataFirst">
+	<select>
+		<option>+</option>
+	</select>
+	<input type="text" placeholder="Вставьте число римскими символами" id="dataSecond">
 	<br>
-	<div class="btn-group btn-group-justified">
-		<div class="btn-group">
-			<a href="#/all" role="button" class="btn btn-default">All</a>
-		</div>
-		<div class="btn-group">
-			<a href="#/active" role="button" class="btn btn-default">Active</a>
-		</div>
-		<div class="btn-group">
-			<a href="#/done" role="button" class="btn btn-default">Done</a>
-		</div>
-	</div>
+	<button id="count">Считать!</button>
 	<br>
-	<ul class="list-group">
-		<li class="<%= status %> list-group-item">
-			<input  type="checkbox" class="someJob" id="<%= id %>" <%= check %>>
-			<label for="<%= id %>" class="<%= status %>" id="<%= id %>"> <%= title %> </label>
-			<i class="fa fa-times imgMus" id="<%= status %>"></i>
-		</li>
-	</ul>
+	<pre id="result"></pre>
 </div>
+<script>
+	var M = 1000, D = 500, C = 100, L = 50, X = 10, V = 5, I = 1;
+	var button = document.getElementById('count');
+	var result = document.getElementById('result');
+	var dataFirst = document.getElementById('dataFirst');
+	var dataSecond = document.getElementById('dataSecond');
+	function countPlus(val) {
+		var result = '';
+		switch (val) {
+			case 'X':
+				result = 10;
+				break;
+			case 'IX':
+				result = 9;
+				break;
+			case 'XI':
+				result = 11;
+				break;
+			case 'IV':
+				result = 4;
+				break;
+			case 'V':
+				result = 5;
+				break;
+			case 'VI':
+				result = 6;
+				break;
+			case 'I':
+				result = 1;
+				break;
+			case 'II':
+				result = 2;
+				break;
+			case 'III':
+				result = 3;
+				break;
+		}
+	}
+</script>
 </body>
 </html>
