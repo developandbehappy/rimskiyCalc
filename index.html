@@ -7,21 +7,34 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container col-md-offset-3 col-md-5 col-sm-6 col-sm-offset-3 col-xs-12" >
-	<h1 class='text-center'>TodoList Backbone</h1>
-<form>
-	<div class="col-centered">
-		<input type="text" class='col-md-9 col-sm-9 col-xs-8'>
-		<button class='col-md-3 col-sm-3 col-xs-4'>Добавить</button>
+<div class="container col-sm-6 col-sm-offset-3 col-xs-12 text-center" id="mainBlock">
+	<h1>TodoList</h1>
+	<div class="input-group">
+		<input type="text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Добавить</button>
+      </span>
 	</div>
-</form>
-<div class="row">
-	<ul class="nav">
-		<li class="col-md-4"><a href="#/all" class="btn btn-default">Все</a></li>
-		<li class="col-md-4"><a href="#/active" class="btn btn-default">Активные</a></li>
-		<li class="col-md-4"><a href="#/done" class="btn btn-default">Завершенные</a></li>
+	<br>
+	<div class="btn-group btn-group-justified">
+		<div class="btn-group">
+			<a href="#/all" role="button" class="btn btn-default">All</a>
+		</div>
+		<div class="btn-group">
+			<a href="#/active" role="button" class="btn btn-default">Active</a>
+		</div>
+		<div class="btn-group">
+			<a href="#/done" role="button" class="btn btn-default">Done</a>
+		</div>
+	</div>
+	<br>
+	<ul class="list-group">
+		<li class="<%= status %> list-group-item">
+			<input  type="checkbox" class="someJob" id="<%= id %>" <%= check %>>
+			<label for="<%= id %>" class="<%= status %>" id="<%= id %>"> <%= title %> </label>
+			<i class="fa fa-times imgMus" id="<%= status %>"></i>
+		</li>
 	</ul>
-</div>
 </div>
 </body>
 </html>
