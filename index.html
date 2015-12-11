@@ -68,15 +68,13 @@
                     result = 0;
             }
             if (second) {
-                console.log('Second data', result);
                 dataSecondArrCount.push(result);
-                console.log('dataSecondArrCount', dataSecondArrCount);
                 SecondCount += dataSecondArrCount[i];
                 console.log('SecondCount', SecondCount);
             } else {
-                console.log('First Data', result);
-                FirstCount = 0;
-                return dataFirstArrCount.push(result);
+                dataFirstArrCount.push(result);
+                FirstCount += dataFirstArrCount[i];
+                console.log('FirstCount', FirstCount);
             }
         }
     }
