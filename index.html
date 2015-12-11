@@ -25,10 +25,8 @@
     var result = document.getElementById('result');
     var dataFirst = document.getElementById('dataFirst');
     var dataSecond = document.getElementById('dataSecond');
-    var dataFirstArr = [];
-    var dataSecondArr = [];
-    var dataFirstArrCount = [];
-    var dataSecondArrCount = [];
+    var FirstCount = 0;
+    var SecondCount = 0;
 
     button.addEventListener('click', function () {
         if (dataFirst.value !== '' && dataSecond.value !== '') {
@@ -41,6 +39,8 @@
 
     function countPlus(val, second) {
         var result = 0;
+        var dataFirstArrCount = [];
+        var dataSecondArrCount = [];
         for (i = 0; i < val.length; i++) {
             switch (val[i]) {
                 case 'I':
@@ -68,13 +68,16 @@
                     result = 0;
             }
             if (second) {
-                console.log(result);
-                return dataSecondArrCount.push(result);
+                console.log('Second data', result);
+                dataSecondArrCount.push(result);
+                console.log('dataSecondArrCount', dataSecondArrCount);
+
+                SecondCount = 0;
             } else {
-                console.log('result', result);
+                console.log('First Data', result);
+                FirstCount = 0;
                 return dataFirstArrCount.push(result);
             }
-
         }
     }
 </script>
