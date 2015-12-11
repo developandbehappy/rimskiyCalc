@@ -34,7 +34,8 @@
             countPlus(dataFirst.value);
             countPlus(dataSecond.value, true);
             count = FirstCount + SecondCount;
-            console.log('count', count);
+            result.innerHTML = 'Общая сумма ' + count;
+            sumWillBeNole();
         } else {
             result.innerHTML = 'Оба поля должны быть заполнены!'
         }
@@ -80,6 +81,11 @@
                 console.log('FirstCount', FirstCount);
             }
         }
+    }
+    function sumWillBeNole() {
+        FirstCount = 0;
+        SecondCount = 0;
+        count = 0;
     }
 </script>
 </body>
