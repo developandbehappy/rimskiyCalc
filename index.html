@@ -33,7 +33,8 @@
 
 	button.addEventListener('click', function () {
 		if (dataFirst.value !== '' && dataSecond.value !== '') {
-
+            countPlus(dataFirst.value);
+            countPlus(dataSecond.value, true);
 		} else {
 			result.innerHTML = 'Оба поля должны быть заполнены!'
 		}
