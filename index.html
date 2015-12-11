@@ -25,11 +25,16 @@
     var result = document.getElementById('result');
     var dataFirst = document.getElementById('dataFirst');
     var dataSecond = document.getElementById('dataSecond');
+    var FirstCount = 0;
+    var SecondCount = 0;
+    var count = 0;
 
     button.addEventListener('click', function () {
         if (dataFirst.value !== '' && dataSecond.value !== '') {
             countPlus(dataFirst.value);
             countPlus(dataSecond.value, true);
+            count = FirstCount + SecondCount;
+            console.log('count', count);
         } else {
             result.innerHTML = 'Оба поля должны быть заполнены!'
         }
@@ -39,8 +44,6 @@
         var result = 0;
         var dataFirstArrCount = [];
         var dataSecondArrCount = [];
-        var FirstCount = 0;
-        var SecondCount = 0;
         for (i = 0; i <= val.length; i++) {
             switch (val[i]) {
                 case 'I':
