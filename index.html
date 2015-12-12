@@ -74,8 +74,6 @@
                 case 'M':
                     result = 1000;
                     break;
-                default:
-                    result = 0;
             }
             if (second) {
                 dataSecondArrCount.push(result);
@@ -94,29 +92,21 @@
 
     function arrDataGet(arr) {
         var countFunc = 0;
-        for (i = 0; i < arr.length; i++) {
-            if (arr[i] < arr[i + 1]) {
-                countFunc += arr[i + 1] - arr[i];
-            } else {
-                if (arr[i + 3]) {
-                    if (arr[i + 3] > arr[i + 2]) {
-                        countFunc += arr[i] + arr[i + 1] + arr[i + 3] - arr[i + 2];
-                    } else {
-                        countFunc += arr[i] + arr[i + 1] + arr[i + 3] + arr[i + 2];
-                    }
-                } else if (arr[i + 2]) {
-                    if (arr[i + 2] > arr[i + 1]) {
-                        countFunc += arr[i] + arr[i + 2] - arr[i + 1];
-                    } else {
-                        countFunc += arr[i] + arr[i + 2] + arr[i + 1];
-                    }
+        arr.pop();
+        console.log('arr', arr);
+        arr.forEach(function (item, i, ar) {
+            if (ar[i + 1]) {
+                if (ar[i] < ar[i + 1]) {
+                    countFunc += - ar[i];
                 } else {
-                    countFunc += arr[i] + arr[i + 1];
+                    countFunc += ar[i];
                 }
+            } else {
+                countFunc += ar[i];
             }
-            console.log('countFunc', countFunc);
-            return countFunc;
-        }
+        });
+        console.log('countFunc', countFunc);
+        return countFunc;
     }
 </script>
 </body>
