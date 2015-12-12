@@ -25,6 +25,8 @@
     var result = document.getElementById('result');
     var dataFirst = document.getElementById('dataFirst');
     var dataSecond = document.getElementById('dataSecond');
+    var dataFirstArrCount = [];
+    var dataSecondArrCount = [];
     var FirstCount = 0;
     var SecondCount = 0;
     var count = 0;
@@ -33,6 +35,8 @@
         if (dataFirst.value !== '' && dataSecond.value !== '') {
             countPlus(dataFirst.value);
             countPlus(dataSecond.value, true);
+            FirstCount = arrDataGet(dataFirstArrCount);
+            SecondCount = arrDataGet(dataSecondArrCount);
             count = FirstCount + SecondCount;
             result.innerHTML = 'Общая сумма ' + count;
             sumWillBeNole();
@@ -43,8 +47,6 @@
 
     function countPlus(val, second) {
         var result = 0;
-        var dataFirstArrCount = [];
-        var dataSecondArrCount = [];
         for (i = 0; i <= val.length; i++) {
             switch (val[i]) {
                 case 'I':
@@ -73,12 +75,8 @@
             }
             if (second) {
                 dataSecondArrCount.push(result);
-                SecondCount += dataSecondArrCount[i];
-                console.log('SecondCount', SecondCount);
             } else {
                 dataFirstArrCount.push(result);
-                FirstCount += dataFirstArrCount[i];
-                console.log('FirstCount', FirstCount);
             }
         }
     }
@@ -86,6 +84,21 @@
         FirstCount = 0;
         SecondCount = 0;
         count = 0;
+        dataFirstArrCount = [];
+        dataSecondArrCount = [];
+    }
+
+    function arrDataGet(arr) {
+        var countFunc = 0;
+        for (i = 0;i < arr.length; i++) {
+            if (arr[i] < arr[i+1]) {
+                countFunc += arr[i+1] - arr[i];
+            } else {
+                countFunc += arr[i] + arr[i+1] ;
+            }
+            console.log('countFunc', countFunc);
+            return countFunc;
+        }
     }
 </script>
 </body>
