@@ -43,15 +43,19 @@
             SecondCount = arrDataGet(dataSecondArrCount);
             if(symbol === '+') {
                 count = FirstCount + SecondCount;
+                result.innerHTML = 'Результат сложения: ';
             } else if (symbol === '-') {
                 count = FirstCount - SecondCount;
+                result.innerHTML = 'Результат вычитания: ';
             } else if (symbol === '*') {
                 count = FirstCount * SecondCount;
+                result.innerHTML = 'Результат умножения: ';
             } else {
                 count = FirstCount / SecondCount;
+                result.innerHTML = 'Результат деления: ';
             }
             if (count) {
-                result.innerHTML = 'Результат ' + getRimskData(count);
+                result.innerHTML += getRimskData(count);
             } else {
                 result.innerHTML = 'Неверные данные!';
             }
