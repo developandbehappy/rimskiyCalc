@@ -10,8 +10,8 @@
 <div class="container col-sm-6 col-sm-offset-3 col-xs-12 text-center" id="mainBlock">
     <h1>Римский калькулятор</h1>
     <input type="text" placeholder="Вставьте число римскими символами" id="dataFirst">
-    <select>
-        <option>+</option>
+    <select class="selectpicker">
+        <option selected="selected">+</option>
         <option>-</option>
         <option>*</option>
         <option>/</option>
@@ -22,6 +22,7 @@
     <br>
     <pre id="result"></pre>
 </div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
     var button = document.getElementById('button');
     var result = document.getElementById('result');
@@ -35,11 +36,20 @@
 
     button.addEventListener('click', function () {
         if (dataFirst.value !== '' && dataSecond.value !== '') {
+            var symbol = $('.selectpicker :selected').val();
             countPlus(dataFirst.value);
             countPlus(dataSecond.value, true);
             FirstCount = arrDataGet(dataFirstArrCount);
             SecondCount = arrDataGet(dataSecondArrCount);
-            count = FirstCount + SecondCount;
+            if(symbol === '+') {
+                count = FirstCount + SecondCount;
+            } else if (symbol === '-') {
+                count = FirstCount - SecondCount;
+            } else if (symbol === '*') {
+                count = FirstCount * SecondCount;
+            } else {
+                count = FirstCount / SecondCount;
+            }
             if (count) {
                 result.innerHTML = 'Результат ' + getRimskData(count);
             } else {
