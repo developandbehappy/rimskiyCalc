@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container col-sm-6 col-sm-offset-3 col-xs-12 text-center" id="mainBlock">
+<div class="container col-sm-4 col-sm-offset-4 col-xs-12 text-center" id="mainBlock">
     <h1>Римский калькулятор</h1>
-    <input type="text" placeholder="Вставьте число римскими символами" id="dataFirst">
-    <select class="selectpicker">
-        <option selected="selected">+</option>
-        <option>-</option>
-        <option>*</option>
-        <option>/</option>
-    </select>
-    <input type="text" placeholder="Вставьте число римскими символами" id="dataSecond">
-    <br>
+
+    <div class="form-group text-center">
+        <input type="text" placeholder="Вставьте число римскими символами" id="dataFirst" class="form-control">
+        <select class="form-control selectpicker" id="sel1">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="text" placeholder="Вставьте число римскими символами" id="dataSecond" class="form-control">
+    </div>
     <button id="button">Считать!</button>
     <br>
     <pre id="result"></pre>
 </div>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script>
     var button = document.getElementById('button');
     var result = document.getElementById('result');
@@ -41,7 +44,7 @@
             countPlus(dataSecond.value, true);
             FirstCount = arrDataGet(dataFirstArrCount);
             SecondCount = arrDataGet(dataSecondArrCount);
-            if(symbol === '+') {
+            if (symbol === '+') {
                 count = FirstCount + SecondCount;
                 result.innerHTML = 'Результат сложения: ';
             } else if (symbol === '-') {
@@ -54,7 +57,7 @@
                 count = FirstCount / SecondCount;
                 result.innerHTML = 'Результат деления: ';
             }
-            if (count) {
+            if (count && count > 0) {
                 result.innerHTML += getRimskData(count);
             } else {
                 result.innerHTML = 'Неверные данные!';
