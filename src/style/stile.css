@@ -1,7 +1,6 @@
-#mainBlock {
-   border: 1px solid #aee
+body {
+   background: #000;
 }
-
 #result {
    display: none;
 }
